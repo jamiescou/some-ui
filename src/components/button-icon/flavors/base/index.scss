@@ -1,0 +1,29 @@
+.$(prefix)button__icon{
+    line-height: 1;
+    vertical-align: middle;
+    color: #54698d;
+}
+
+.$(prefix)button {
+    i {
+    vertical-align: middle;
+    }
+}
+
+.$(prefix)button__small{
+    padding: 0;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    border-radius: 3px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    &:hover,
+    &focus{
+        background-color: #f4f6f9;
+    }
+}
+
+.$(prefix)dropdown__left{
+    margin-left: 6px;
+}

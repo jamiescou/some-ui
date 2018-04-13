@@ -1,0 +1,66 @@
+/* eslint-disable */
+import React, {Component} from 'react'
+const ReactElementToString = require('react-element-to-string');
+import {
+    Demo,   //demo外层窗口
+    DemoHeader, //demo的大类名称
+    DemoBlock, //demo的单项示例 加 代码块
+    DemoExample, //demo的实例 
+    DemoItem, //demo小类的名称
+    DemoCode //demo的代码块
+} from './demo';
+<% components.forEach(function(v){ %>
+    import <%= v.name %> from '<%=v.url%>/index.example';
+<% }); %>
+const components = {
+    <% components.forEach(function(v){ %>
+       '<%= v.name %>' : <%= v.name %>,
+    <% }); %>
+}
+export default class main extends Component {
+
+    buildExample(ReactElement,index) {
+        let components = [];
+        if (ReactElement instanceof Array) {
+            ReactElement.forEach((v, index) => {
+                let element = (
+                        <DemoBlock key={index}>
+                            <DemoExample id={v.id}>
+                                <DemoItem>{v.id}</DemoItem>
+                                <div>{v.intro}</div>
+                                 {v.element}
+                            </DemoExample>
+
+                            <DemoCode>
+                                <pre className='prettyprint'>
+                                    {v.code ? v.code : ReactElementToString(v.element)}
+                                </pre>
+                                <textarea  style={{width:'1px',height:'1px',opacity:'0'}}
+                                 defaultValue= {v.code ? v.code : ReactElementToString(v.element)} />
+                            </DemoCode>
+                        </DemoBlock>
+                );
+                components.push(element);
+            });
+        } else {
+            components = React.createElement(ReactElement);
+        }
+        return (
+            <Demo id={index} key={index}>
+                <DemoHeader>{index}</DemoHeader>
+                {components}
+            </Demo>
+        );
+    }
+
+    render() {
+        let renderComponents = _.map(components,(v,i) => {
+               return this.buildExample(v,i);
+        });
+        return (
+            <div id="mainContent">
+               {renderComponents}
+            </div>
+        );
+    }
+}

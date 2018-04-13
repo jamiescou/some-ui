@@ -1,0 +1,87 @@
+.$(prefix)pagination{
+    label {
+    display:none;
+    }
+    @define-mixin active{
+      background-color: #2c7cff;
+      color: #fff;
+    }
+
+    @define-mixin hover{
+      background-color: #f6f6f9;
+    }
+
+    &__pages{
+        text-align: center;
+        &>li {
+            width: 32px;
+            height: 32px;
+            font-size:13px;
+            line-height: 32px;
+            border-radius: 3px;
+            cursor: pointer;
+            color: #5a6978;
+            margin:0 5px;
+            user-select: none;
+            &:hover{
+                @mixin hover;
+            }
+            &.active{
+                @mixin active;
+            }
+            & .mcds-popover-trigger{
+                width:100%;
+                height:100%;
+            }
+        }
+    }
+    &__pre, &__next,&_all{
+        width:auto !important;
+        border-radius: 3px;
+        padding:0 15px;
+        & i {
+            vertical-align: -1px;
+        }
+        &:hover {
+            @mixin hover;
+        }
+        &.weak {
+            color: #c6cbd0;
+        }
+    }
+
+    &__pre {
+        margin-right:15px !important;
+    }
+
+    &__next {
+        margin-left: 15px !important;
+    }
+    &__jump {
+        width: 65px !important;
+        & input {
+            padding:0;
+            text-align:center;
+            &::placeholder{text-align: center;}
+        }
+    }
+
+    &__submite {
+        &:hover {
+            background-color: initial !important;
+        }
+    }
+    
+    /*用来限制popselect下dropdown过长的问题*/
+    &__omit {
+        & .mcds-dropdown__list{
+            max-height: 200px;
+            overflow: auto;
+        }
+    }
+    &__perpage {
+        margin-left: 122px !important;
+        width:160px !important;
+     
+    }
+}

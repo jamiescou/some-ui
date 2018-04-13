@@ -1,0 +1,22 @@
+/*
+    这是一个关于鼠标光标的公共样式
+ */
+:global{
+    .$(prefix)cursor{
+        &__pointer {
+            cursor: pointer;;
+        }
+        &__text {
+            cursor: text;
+        }
+        &__help {
+            cursor: help;
+        }
+        &__wait {
+            cursor: wait
+        }
+        &__move {
+            cursor: move;
+        }
+    }
+}

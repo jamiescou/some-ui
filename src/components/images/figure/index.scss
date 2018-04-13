@@ -1,0 +1,107 @@
+.$(prefix)image {
+    display: block;
+    position: relative;
+    &__crop {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate3d(-50%, -50%, 0);
+            max-width: 200%;
+        }
+        &:after {
+            content: '';
+            display: block;
+        }
+        &-1-by-1 {
+            padding-top: 100%;
+        }
+        &-16-by-9 {
+            padding-top: 56.25%;
+        }
+        &-4-by-3 {
+            padding-top: 75%;
+        }
+    }
+    &__title {
+        display: flex;
+        align-items: center;
+        padding: 8px;
+        font-size: 12px;
+        color: #5a6978;
+        &-overlay {
+            color: #fff;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            .$(prefix)image__text {
+                z-index: 1;
+            }
+        }
+        &-card {
+            background: #fff;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+    }
+    &__overlay {
+        content: '';
+        background: rgba(0,0,0,.4);
+        color: #fff;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+    &__card {
+        background: #fafafb;
+        border-top: 1px solid #f4f6f9;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, .16);
+    }
+    &__icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+        margin-top: -16px;
+    }
+    &__actions {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        .$(prefix)button__item{
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+    }
+    .$(prefix)truncate {
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+.$(prefix)text-heading__large {
+    font-weight: 300;
+    font-size: 1.75rem;
+    line-height: 1.25;
+}
+.$(prefix)align__absolute-center {
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+

@@ -1,0 +1,22 @@
+ /* 用来做divider */
+ 
+ :global {
+    @define-mixin border $dir {
+         border-$(dir): 1px solid #eaebed;
+    }
+    .$(prefix)divider {
+        &__left {
+            @mixin border left;
+        }
+        &__right {
+            @mixin border right;
+        }
+        &__top {
+            @mixin border top;
+        }
+        &__bottom {
+            @mixin border bottom;
+        }
+    }
+
+ }

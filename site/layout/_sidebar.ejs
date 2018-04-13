@@ -1,0 +1,56 @@
+/* eslint-disable */
+import React from 'react';
+
+<% components.forEach(function(v){ %>
+    import <%= v.name %> from '<%=v.url%>/index.example';
+<% }); %>
+
+
+import {hasClass,addClass,removeClass} from '../../utils/dom';
+
+const components = {
+    <% components.forEach(function(v){ %>
+       '<%= v.name %>' : <%= v.name %>,
+    <% }); %>
+}
+
+function toggle(e,a) {
+    if (hasClass(e.currentTarget,'active')) {
+        removeClass(e.currentTarget,'active');
+    } else {
+        addClass(e.currentTarget,'active');
+    }
+}
+
+function buildNav (menu) {
+    let nav = _.map(menu,(v,index) => {
+                if (React.isValidElement(v)) {
+                    return <li key={index}>{index}</li>;
+                }
+                let child = _.map(v, (_v, _index) => (
+                      <li key={_v.id + _index}><a href={`#${_v.id}`}>{_v.id}</a></li>
+                ));
+                return (
+                    <li key={index}>
+                        <a key={index} className="sidebar-item" onMouseDown={toggle} href={`#${index}`}>
+                            <span className='left-content'>{index}({child.length})</span>
+                            <span className="right-icon mcds-icon__triangle-right-tiny" />
+                        </a>
+                        <ul>
+                            {child}
+                        </ul>
+                    </li>
+                )});
+    return nav;
+}
+
+let sidebar = props => {
+     return (
+        <div id="mainMenu" style={{height:'calc(100% - 90px)'}}>
+                <ul>
+                {buildNav(components)}
+                </ul>
+        </div>);
+}
+
+export default sidebar;

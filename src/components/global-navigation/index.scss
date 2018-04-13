@@ -1,0 +1,42 @@
+.$(prefix)globalnavigation{
+    border-bottom: 1px solid #e8ecf5;
+    &__logo{
+        /* 用来消除 tab组件的样式 */
+        &:hover {
+            color: $color-text !important;
+            box-shadow: none !important;
+        }
+        img,svg {
+            vertical-align: bottom;
+        }
+    }
+
+    & .mcds-tab__items{
+        border-bottom:none;
+        & .mcds-tab__item {
+            height:60px;
+            line-height:60px;
+        }
+    }
+
+    & .mcds-label{
+        display:none;
+    }
+
+    &__actions {
+        & .mcds-list__item {
+            vertical-align: middle;
+            & [class^="mcds-icon__"], [class*=" mcds-icon__"] {
+                color:#5a6978;
+                &:hover {
+                    color:#2a3451;
+                }
+            }
+        }
+        &-search {
+            & .mcds-input{
+                width:240px;
+            }
+        }
+    }
+}

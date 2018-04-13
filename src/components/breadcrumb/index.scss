@@ -1,0 +1,29 @@
+.$(prefix)breadcrumb {
+    display: flex;
+    font-size: 13px;
+    .$(prefix)list__item,
+    &__item {
+        position: relative;
+        &:before {
+            content: '\003E';
+            position: absolute;
+            left: -15px;
+            color: #adb2bb;
+        }
+        &:first-child {
+            &:before {
+                content: '';
+            }
+        }
+        &:last-child {
+            color: #2a3541;
+        }
+    }
+}
+.$(prefix)text-title__caps {
+    line-height: 20px;
+    letter-spacing: 2px;
+    margin-right: 20px;
+    color: #2c7cff;
+    cursor: pointer;
+}

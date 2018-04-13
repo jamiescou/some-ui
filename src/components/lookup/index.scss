@@ -1,0 +1,90 @@
+    $base-color : 0 0 0 1px #ccd2e0, 0 0 5px 0 rgba(44, 123, 255, 0.6);
+    .$(prefix)lookup {
+        box-shadow: 0 0 0 1px #dadee6;
+        border-radius: 4px;
+        width:100%;
+        display: block;
+        &__active {
+            .$(prefix)lookup__row:first-child{
+                appearance: none;
+                box-shadow: 0 0 1px 1px #1589ee;
+                border-radius: 4px;
+            }
+        }
+
+        & .$(prefix)form__control {
+            height: 100%;
+            line-height: 1;
+        }
+        & input {
+            appearance: none;
+            border: none;
+            box-shadow: none;
+            outline: none;
+            padding-left: 12px;
+            font-size:13px;
+            height: 100%;
+            margin:0;
+            &:focus {
+                // appearance: none;
+                // border: none;
+                // box-shadow: none;
+                border-color: #1589DE;
+                outline: none;
+                border-radius: 3px;
+                background-color: #ffffff;
+                box-shadow: 0 0 0 1px #ccd2e0, 0 0 5px 0 rgba(44, 124, 255, 0.6);
+            }
+            &:hover{
+                box-shadow: none;
+            }
+        }
+        &__row {
+            height:32px;
+            &-list {
+                line-height: 1;
+                margin: auto 0;
+            }
+            &:hover{
+                box-shadow: $base-color;
+                border-radius: 4px;
+            }
+        }
+        &__item {
+            padding: 3px 5px 3px 3px;
+            display: inline-block;
+            height: 24px;
+            border-radius: 4px;
+            line-height: 18px !important;
+            cursor: pointer;
+            background-color: #ffffff;
+            box-shadow: 0 1px 3px 0 rgba(52, 63, 75, 0.12), 0 0 0 1px rgba(52, 63, 75, 0.06);
+            &:hover{
+
+            };
+        }
+
+        &__list {
+            width: 100%;
+            max-width: inherit !important;
+        }
+        &__avatar {
+            & img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        &__close {
+            color: #979fab;
+            &:hover{
+                color: $color-text;
+                cursor: pointer;
+            };
+        }
+        &__single{
+            width: 100%;
+            & .$(prefix)lookup__item {
+                width: 100%;
+            }
+        }
+    }

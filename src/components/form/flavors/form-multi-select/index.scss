@@ -1,0 +1,41 @@
+.$(prefix)picklist{
+    position: relative;
+    &__options{
+        box-shadow: 0 0 0 1px #dadee6;
+        border-radius: 3px;
+        width: 220px;
+        height: 220px;
+        background-color: #fff;
+        overflow: auto;
+        padding: 5px 0;
+    }
+    &__item{
+        height: 32px;
+        line-height: 32px;
+        color: #5a6978;
+        font-size: 13px;
+        padding-left: 12px;
+        cursor: pointer;
+        &:hover{
+            background-color: #f4f6f9;
+        }
+    }
+    &__active{
+        background-color: #2c7cff;
+        color: #fff;
+    }
+    &__vertical{
+        flex-direction: column;
+        margin: auto 13px;
+    }
+    &__icon-color {
+        color: #969faa;
+    }
+}
+li.$(prefix)picklist__active {
+    &:hover,
+    &:focus {
+        background-color: #2c7cff;
+        color: #fff;
+    }
+}

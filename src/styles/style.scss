@@ -1,0 +1,27 @@
+@import "_variables.scss";
+@import "_grid.scss";
+@import "_list.scss";
+@import "_divider.scss";
+@import "_cursor.scss";
+@import "_box-mar-pad.scss";
+@import "_text.scss";
+@import "_avatar.scss";
+@import "_global.scss";
+@import "_layout.scss";
+@import "_icon.scss";
+@import "_utils.scss";
+@import "_editor.scss";
+@import "_phone.scss";
+:global {
+    @import "./font-style.css";
+    @import "../components/index.scss";
+}
+
+@keyframes :global(rotate) {
+    from {
+        transform: rotate(0)
+    }
+    to {
+        transform: rotate(360deg)
+    }
+}

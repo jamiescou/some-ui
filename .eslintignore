@@ -1,0 +1,6 @@
+lib/
+node_modules/
+style/
+test/
+src/components/phone
+*.MD

@@ -1,0 +1,156 @@
+:global{
+    h1,h2,h3,h4,h5,h6,p,ol,ul,dl,fieldset {
+        margin: 0;
+        padding: 0;
+    }
+
+    dd,figure {
+        margin: 0;
+    }
+
+    abbr[title],fieldset,hr {
+        border: 0;
+    }
+
+    hr {
+        padding: 0;
+    }
+
+    h1,h2,h3,h4,h5,h6 {
+        font: {
+            weight: inherit;
+            size: 1em;
+        }
+    }
+
+    ol,ul {
+        list-style: none;
+    }
+
+
+
+    a {
+        color: $color-text-link;
+        text-decoration: none;
+        transition: color 0.1s linear;
+        &:hover,&:focus {
+            outline: none;
+            color: $color-text-link-hover;
+        }
+        &:active {
+            outline: none;
+            color: $color-text-link-active;
+        }
+    }
+    a,button,input[type="checkbox"] {
+        cursor: pointer;
+    }
+    button{
+        &:hover,&:focus{
+            outline:none;
+        }
+    }
+    b,strong,dfn {
+        font-weight: $font-weight-bold;
+    }
+
+    mark {
+    background-color: $color-background-highlight-search;
+    color: $color-text-default;
+    }
+
+    abbr[title] {
+        cursor: help;
+    }
+
+
+
+    input[type=search] {
+        box-sizing: border-box;
+    }
+
+
+
+    table {
+        width: 100%;
+    }
+
+    caption,th,td {
+        text-align: left;
+    }
+
+
+
+    hr {
+    display: block;
+    margin: $spacing-x-large 0;
+    border-top: 1px solid $color-border;
+    height: 1px;
+    clear: both;
+    }
+
+    audio,canvas,iframe,img,svg,video {
+        vertical-align: middle;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    [class^="mcds"] *{
+        box-sizing: border-box;
+    }
+}
+
+:global{
+    /* 用来文字做截取的样式 */
+
+    .$(prefix)truncate {
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .$(prefix)bg {
+        background-color: $body-bg;
+        &__weak {
+        background-color:$body-bg-weak;
+        }
+
+        &__warning, &__yellow {
+            background: $theme-bg-warning;
+        }
+
+        &__success, &__green {
+            background-color: $theme-bg-success;
+        }
+
+        &__error, &__red {
+            background-color: $theme-bg-error;
+        }
+
+        &__info, &__black {
+            background-color: $theme-bg-info;
+        }
+    }
+
+    .$(prefix)container {
+        &__shadow {
+            box-shadow: 0 12px 24px 0 rgba(42, 52, 65, 0.12), 0 0 1px 0 rgba(42, 52, 65, 0.24);
+        }
+    }
+    .$(prefix)overflow {
+        @each $type in auto, hidden, overlay, initial {
+          &__$(type) {
+            overflow: $(type) !important;
+          }
+          &__$(type)-x {
+            overflow: $(type) !important;
+          }
+          &__$(type)-y {
+            overflow: $(type) !important;
+          }
+        }
+    }
+}

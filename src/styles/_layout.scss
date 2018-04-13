@@ -1,0 +1,187 @@
+:global{
+    $flex-column: 12;
+
+    @define-mixin clearfix {
+        &:before, &:after {
+            content: " ";
+            display: flex;
+            box-sizing: border-box;
+            width: 0;
+            height: 0;
+            font-size: 0;
+        }
+        &:after {
+            clear: both;
+        }
+    }
+
+    @define-mixin buildRowAlign {
+        &.$(prefix)layout__left {
+           align-items: flex-start;
+        }
+        &.$(prefix)layout__right {
+            align-items: flex-end;
+        }
+        &.$(prefix)layout__top {
+            justify-content: flex-start;
+        }
+        &.$(prefix)layout__bottom {
+           justify-content: flex-end;
+        }
+        &.$(prefix)layout__center {
+            align-items: center;
+        }
+        &.$(prefix)layout__middle {
+            justify-content: center;
+        }
+    }
+
+    @define-mixin buildColumnAlign {
+        &.$(prefix)layout__left {
+            justify-content: flex-start;
+        }
+        &.$(prefix)layout__right {
+            justify-content: flex-end;
+        }
+        &.$(prefix)layout__top {
+            align-items: flex-start;
+        }
+        &.$(prefix)layout__bottom {
+            align-items: flex-end;
+        }
+        &.$(prefix)layout__center {
+            justify-content: center;
+        }
+        &.$(prefix)layout__middle {
+            align-items: center;
+        }
+    }
+
+    @define-mixin build {
+        @for $i from 1 to $flex-column {
+            &__item-$i {
+                float: left;
+                width: calc( $i / $flex-column * 100)%;
+            }
+            &__offset-$i {
+                margin-left: calc( $i / $flex-column * 100)%;
+            }
+            &__order-$i {
+                order: $(i);
+            }
+        }
+    }
+
+
+    .$(prefix)layout {
+        &__column, &__row {
+            display:flex;
+            flex-wrap: wrap;
+            @mixin clearfix;
+        }
+
+        &__column {
+            flex-direction: row;
+        }
+
+        &__row {
+            flex-direction: column;
+        }
+
+        &__around {
+            justify-content: space-around;
+        }
+        &__between {
+            justify-content: space-between;
+        }
+        &__baseline {
+            align-items: baseline;
+        }
+
+        &__strech {
+            align-items: stretch;
+        }
+
+        &__item {
+            float: left;
+            flex-grow: 1;
+        }
+        @mixin build;
+
+        &__column {
+             @mixin buildColumnAlign
+        }
+        &__row {
+             @mixin buildRowAlign;
+        }
+    }
+
+    [class*=$(prefix)layout__item] {
+        &.$(prefix)layout__left {
+            margin-right: auto;
+        }
+        &.$(prefix)layout__right {
+            margin-left: auto;
+        }
+        &.$(prefix)layout__top {
+            margin-bottom: auto;
+        }
+        &.$(prefix)layout__bottom {
+            margin-top: auto;
+        }
+        &.$(prefix)layout__center {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        &.$(prefix)layout__middle {
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+    }
+
+    .$(prefix)layout__sm-show, .$(prefix)layout__md-show, .$(prefix)layout__lg-show {
+        display: none!important;
+    }
+    @media (max-width: 1200px) {
+        .$(prefix)layout__lg {
+            flex-direction: row;
+            @mixin buildRowAlign;
+        }
+        .$(prefix)layout__lg-hide {
+            display: none !important;
+        }
+        .$(prefix)layout__lg-show {
+            display: flex !important;
+        }
+    }
+
+    @media (max-width: 992px) {
+        .$(prefix)layout__md {
+            flex-direction: row;
+            @mixin buildRowAlign;
+        }
+        .$(prefix)layout__md-hide {
+            display: none !important;
+        }
+        .$(prefix)layout__md-show {
+            display: flex !important;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .$(prefix)layout__sm {
+            flex-direction: column;
+            @mixin buildRowAlign;
+            
+            [class*=$(prefix) ] {
+                width: 100%;
+            }
+        }
+        .$(prefix)layout__sm-hide {
+            display: none !important;
+        }
+        .$(prefix)layout__sm-show {
+            display: flex !important;
+        }
+    }
+}

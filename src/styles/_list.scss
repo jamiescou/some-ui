@@ -1,0 +1,40 @@
+:global{
+    .$(prefix)list {
+
+        &__item {
+            //padding:10px 12px;
+        }
+
+        &__horizontal {
+            & .mcds-list__item {
+                display:inline-block;
+            }
+        }
+
+        &__divider{
+
+            &-top {
+                & .mcds-list__item {
+                    border-top:1px solid rgba(52, 63, 75, 0.08);
+                }
+            }
+
+            &-bottom {
+                & .mcds-list__item {
+                    border-bottom:1px solid rgba(52, 63, 75, 0.08);
+                }
+            }
+
+            &-around {
+                & .mcds-list__item {
+                    border:1px solid rgba(52, 63, 75, 0.08);
+                    
+                    &+.mcds-list__item {
+                        margin-top:5px;
+                    }
+                }
+            }
+        }
+        
+    }
+}

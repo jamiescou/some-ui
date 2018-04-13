@@ -1,0 +1,37 @@
+.$(prefix)tile {
+    font-size:12px;
+    &__head {
+        font-size: 13px;
+        color: #2c7cff;
+        line-height:1;
+        font-weight: normal;
+        margin-bottom:5px;
+    }
+
+    &__fun {
+        display:flex;
+        &-block {
+            flex:1;
+        }
+    }
+
+    &__detail {
+        line-height:1.5;
+        &-list{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            & .mcds-tile__item-label{
+                width:24%;
+                color: #767d85;
+            }
+            & .mcds-tile__item-detail{
+                width:76%;
+                color: #2a3541;
+            }
+        }
+        &-weak {
+            color: #767d85;
+        }
+    }
+}

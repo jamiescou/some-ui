@@ -1,0 +1,40 @@
+
+$prefix: mcds-;
+
+$body-bg: #fff;
+$body-bg-weak: #fafafb;
+
+/* 常规文字的颜色 */
+$color-text: #2a3541;
+/* 微微发灰的颜色 */
+$color-text-weak: #767d85;
+/* 白色字体 */
+$color-text-white: #ffffff;
+
+
+
+$color-text-link: #2c7cff;
+$color-text-link-hover: #2f81fb;
+$color-text-link-active: #2f81fb;
+
+$icon-icon-small:12px;
+$icon-icon-medium:14px;
+$icon-icon-large:16px;
+
+$avatar-size-small: 24px;
+$avatar-size-medium: 32px;
+$avatar-size-large: 40px;
+
+$duration-quickly: .1s;
+$duration-slowly: .3s;
+
+$container-boxshadow: 0 2px 3px 0 rgba(0,0,0,.16);
+$line-height-base:        1.428571429 !default;
+
+
+//主题颜色 
+$theme-bg-base: rgba(80, 100, 130, 0.85);
+$theme-bg-info: rgba(28, 40, 52, 0.85);
+$theme-bg-warning: rgba(251, 168, 37, 0.85);
+$theme-bg-error: rgba(198, 37, 40, 0.85);
+$theme-bg-success: rgba(0, 158, 71, 0.85);

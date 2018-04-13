@@ -1,0 +1,248 @@
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-size: 13px;
+}
+
+.$(prefix)table {
+    background-color: #fff;
+    th,
+    td {
+        white-space: nowrap;
+        position: relative;
+    }
+    th {
+        font-weight: 400;
+        height: 32px;
+        padding: 8px 20px;
+        color: #767d85;
+        font-size: 12px;
+        user-select: none;
+        overflow: visible;
+    }
+    td {
+        height: 40px;
+        padding: 8px 20px;
+        color: #2a3541;
+        font-size: 13px;
+    }
+
+    &__wrapper {
+        position: relative;
+        overflow-y: auto;
+    }
+    &__fixed {
+        table-layout: fixed;
+    }
+    &-th__width {
+        width: 40px;
+    }
+    &__data-null {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    &.$(prefix)table__bordered:not(.$(prefix)no-row-hover) tbody tr:hover {
+        background-color: #f6f6f9;
+        box-shadow: 0 -1px 0 0 rgba(52, 63, 75, 0.08), 0 1px 0 0 rgba(52, 63, 75, 0.08);
+    }
+    &__checked {
+        background-color: #f6f6f9;
+        box-shadow: 0 -1px 0 0 rgba(52, 63, 75, 0.08), 0 1px 0 0 rgba(52, 63, 75, 0.08);
+    }
+    tbody tr.$(prefix)is-selected,
+    &:not(.$(prefix)no-row-hover) tr.$(prefix)is-selected:hover {
+        > td,
+        > th {
+            background-color: #f4f6f9;
+        }
+    }
+    td.$(prefix)is-selected,
+    td.$(prefix)is-selected:hover,
+    th.$(prefix)is-selected,
+    th.$(prefix)is-selected:hover {
+        box-shadow: 0 0 0 0 1px inset;
+    }
+    .$(prefix)cell-wrap {
+        white-space: normal;
+    }
+    .$(prefix)cell-buffer__left {
+        padding-left: 24px;
+    }
+    .$(prefix)cell-buffer__right {
+        padding-right: 24px;
+    }
+    &__width {
+        width: 100px;
+    }
+}
+
+.$(prefix)table-col__bordered {
+    td + td,
+    th + th,
+    th + td,
+    td + th {
+        border-left: 1px solid #F6F6F6;
+    }
+}
+
+.$(prefix)table-fixed__layout {
+    table-layout: fixed;
+    width: 100%;
+    white-space: nowrap;
+    thead {
+        background-color: #fff;
+    }
+    .$(prefix)cell__shrink {
+        &:nth-child(n) {
+            padding: {
+                left: 0;
+                right: 0;
+            }
+        }
+        &:first-child {
+            width: 70px;
+            padding-right: 0px;
+        }
+        &:last-child {
+            text-align: right;
+            padding-left: 8px;
+        }
+    }
+}
+
+.$(prefix)table__cell-buffer {
+    tr > th:first-child,
+    tr > td:first-child {
+        /*这块,发生莫名的样式,不知道有什么用.先删掉,发现为什么可以加回来,加上说明*/
+        // padding-left: 24px;
+    }
+    tr > th:last-child,
+    tr > td:last-child {
+        // padding-right: 24px;
+    }
+}
+
+.$(prefix)table__checkbox {
+    width: 13px;
+}
+
+.$(prefix)table__bordered {
+    thead > tr + tr > th {
+        box-shadow: 0 1px 0 0 rgba(52, 63, 75, 0.08);
+    }
+    tr {
+        box-shadow: 0 1px 0 0 rgba(52, 63, 75, 0.08);
+        &.$(prefix)table__checked {
+            box-shadow: 0 -1px 0 0 rgba(52, 63, 75, 0.08), 0 1px 0 0 rgba(52, 63, 75, 0.08);
+        }
+    }
+}
+
+.$(prefix)table__truncate {
+/*    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;*/
+    max-width: 100px;
+    overflow: auto;
+}
+
+/*.$(prefix)table__striped {
+    tr:nth-of-type(even) {
+        > td,
+        th {
+            background-color: #f6f6f9;
+        }
+    }
+}*/
+
+
+th.$(prefix)is__sortable {
+    cursor: pointer;
+    .$(prefix)button {
+        visibility: hidden;
+        margin-left: 8px;
+    }
+    .$(prefix)button__icon {
+        fill: #0070d2;
+    }
+    &:hover {
+        background-color: #f6f6f9;
+        color: #0070d2;
+        .$(prefix)button {
+            visibility: visible;
+        }
+    }
+}
+
+.$(prefix)icon_container {
+    .$(prefix)table__icon {
+        opacity: 0;
+        margin-left: 5px;
+    }
+}
+
+.$(prefix)th__action {
+    display: flex;
+    &:hover {
+        color: #0070d2;
+        outline: 0;
+        background-color: #f6f6f9;
+        text-decoration: none;
+        .$(prefix)table__icon {
+            opacity: 1;
+            vertical-align: middle;
+        }
+        .$(prefix)is-sortable__icon {
+            display: inline-block;
+        }
+    }
+}
+
+.$(prefix)assistive-text {
+    position: absolute!important;
+    margin: -1px!important;
+    border: 0!important;
+    padding: 0!important;
+    width: 1px!important;
+    height: 1px!important;
+    overflow: hidden!important;
+    clip: rect(0 0 0 0)!important;
+}
+
+.$(prefix)flex__table {
+    font-size: 13px;
+    >div {
+        display: flex;
+    }
+    .$(prefix)table__title {
+        display: flex;
+        border-bottom: 1px solid #F6F6F6;
+        padding-left: 8px;
+        height: 32px;
+        line-height: 32px;
+    }
+    .$(prefix)table__content {
+        display: flex;
+        padding-left: 8px;
+        height: 40px;
+        line-height: 40px;
+        &:hover {
+            cursor: default;
+            background-color: #f6f6f9;
+        }
+    }
+    .$(prefix)flex1 {
+        flex: 1;
+    }
+    .$(prefix)flex2 {
+        flex: 2;
+    }
+    .$(prefix)flex3 {
+        flex: 3;
+    }
+}

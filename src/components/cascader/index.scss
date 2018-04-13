@@ -1,0 +1,32 @@
+.$(prefix)select{
+    &__root{
+        left: 0;
+        position: fixed;
+        top: 0;
+        & .$(prefix)dropdown {
+            position: initial;
+            margin-top: 0;
+            width: 130px;
+            min-width: initial;
+            max-width: initial;
+            &__list {
+                max-height: 300px;
+                overflow: auto;
+            }
+        }
+    }
+    &__multi{
+        &-checkbox {
+            background:#2c7cff;
+            box-shadow: 0px 0px 1px 1px #d4dadd;
+            vertical-align: middle;
+            & [class^="mcds-icon__"], [class*=" mcds-icon__"] {
+                color:white;
+            }
+            &-place{
+                background: inherit;
+            }
+        }
+    }
+
+}

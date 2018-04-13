@@ -1,0 +1,35 @@
+:global{
+    .$(prefix)avatar {
+        overflow: hidden;
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 1;
+        border-radius:3px;
+        color: #fff;
+        box-shadow: inset 0 0 0 1px rgba(52, 63, 75, 0.03);
+        &__small {
+            width: $avatar-size-small;
+            height: $avatar-size-small;
+        }
+        &__medium {
+            width: $avatar-size-medium;
+            height: $avatar-size-medium;
+        }
+        &__large {
+            width: $avatar-size-medium;
+            height: $avatar-size-medium;
+        }
+
+        @for $i from 12 to 48 {
+            &__size-$i {
+               width:$(i)px !important;
+               height:$(i)px !important;
+            }
+        }
+
+        &__circle {
+            border-radius:50% !important;
+        }
+
+    }
+}

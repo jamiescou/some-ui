@@ -1,0 +1,44 @@
+.$(prefix)button__group {
+    display: inline-block;
+    .$(prefix)button__item{
+        padding-left: 16px;
+        padding-right: 16px;
+        text-align: center;
+        vertical-align: middle;
+        border: 1px solid #ddd;
+        background-color: #fff;
+        &.active{
+            background: #f4f6f9;
+        }
+        &:hover{
+            background: #f4f6f9;
+        }
+    }
+    &:hover{
+        box-shadow: 0 1px 3px 0 rgba(52, 63, 75, 0.12), 0 3px 6px 0 rgba(52, 63, 75, 0.12), 0 0 0 1px rgba(52, 63, 75, 0.06);
+        border-radius: 5px;
+    };
+    .$(prefix)button {
+        border-radius: 0;
+        margin-right: 0;
+    }
+    >span:first-child button {
+        border-top-left-radius:5px;
+        border-bottom-left-radius:5px;
+    }
+    >span:last-child button {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+    /*.$(prefix)button:first-child {
+        border-top-left-radius:5px;
+        border-bottom-left-radius:5px;
+    }
+    .$(prefix)button:last-child {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }*/
+    .$(prefix)button{
+        margin-left: -1px;
+    }
+}

@@ -1,0 +1,15 @@
+.$(prefix)span__required{
+    color: #e22e3a;
+    font-size: 12px;
+    vertical-align: middle;
+    margin-right: 6px;
+    font-weight: 500;
+}
+
+.$(prefix)input__required{
+    border: 1px solid #e22e3a;
+}
+
+.$(prefix)mg__right{
+    margin-right: 10px;
+}

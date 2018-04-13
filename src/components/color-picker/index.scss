@@ -1,0 +1,20 @@
+
+.$(prefix)color {
+    &__preview {
+        width: 28px;
+        height: 28px;
+        box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1) inset;
+        border-radius: 14px;
+    }
+
+    &__setting {
+        padding: 10px 15px;
+        width: 100%;
+        margin-bottom: 0;
+        line-height: 30px;
+    }
+
+    &__setting-label {
+        font-size: 13px;
+    }
+}

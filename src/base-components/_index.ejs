@@ -1,0 +1,9 @@
+/* eslint-disable */
+<% components.forEach(function(v){ %>
+import <%= v.name %> from './<%=v.files%>';
+<% }); %>
+export default  {
+    <% components.forEach(function(v){ %>
+    ...<%=v.name%>,
+    <% }); %>
+}

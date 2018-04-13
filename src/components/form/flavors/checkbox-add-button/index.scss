@@ -1,0 +1,85 @@
+.$(prefix)checkbox__add {
+    .$(prefix)assistive__text {
+        position: absolute !important;
+        margin: -1px !important;
+        border: 0 !important;
+        padding: 0 !important;
+        width: 1px !important;
+        height: 1px !important;
+        overflow: hidden !important;
+        clip: rect(0 0 0 0) !important;
+    }
+    .$(prefix)checkbox__faux {
+        width: 2rem;
+        height: 2rem;
+        position: relative;
+        display: inline-block;
+        border: 1px solid #d8dde6;
+        border-radius: .25rem;
+        background-color: #fff;
+        cursor: pointer;
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 14px;
+            width: 2px;
+            margin: auto;
+            background: #0070d2;
+        }
+        &:after {
+            width: 14px;
+            height: 2px;
+        }
+        &:hover:not([disabled]),
+        &:focus:not([disabled]) {
+            background-color: #ffffff;
+            box-shadow: 0 1px 3px 0 rgba(52, 63, 75, 0.12), 0 3px 6px 0 rgba(52, 63, 75, 0.12), 0 0 0 1px rgba(52, 63, 75, 0.06);
+        }
+        &:active {
+            background-color: #eef1f6;
+        }
+    }
+    input[type=checkbox]:checked {
+        ~ .$(prefix)checkbox__faux,
+        + .$(prefix)checkbox__faux {
+            border-color: transparent;
+            background: #00ce7d;
+            &:before,
+            &:after {
+                background: #fff;
+            }
+            &:before {
+                top: 0;
+                left: 5px;
+                height: 10px;
+                transform: rotate(40deg);
+            }
+            &:after {
+                top: 4px;
+                left: -8px;
+                width: 10px;
+                transform: rotate(36deg);
+            }
+            &:hover:not([disabled]) {
+                background-color: #00bf74;
+                box-shadow: 0 3px 6px 0 rgba(52, 63, 75, 0.24), 0 1px 3px 0 rgba(52, 63, 75, 0.16), inset 0 0 1px 1px rgba(255, 255, 255, 0.24);
+            }
+        }
+    }
+    input[type=checkbox][disabled] {
+        ~ .$(prefix)checkbox__faux,
+        + .$(prefix)checkbox__faux {
+            background-color: #eff0f3;
+            border-color: #eff0f3;
+            &:before,
+            &:after {
+                background: #c6cbd0;
+            }
+        }
+    }
+}

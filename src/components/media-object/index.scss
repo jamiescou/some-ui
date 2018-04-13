@@ -1,0 +1,16 @@
+
+.$(prefix)media{
+    display: flex;
+    align-items: flex-start;
+
+    &__figure {
+        flex-shrink: 0;
+        margin-right: 10px;
+    }
+
+    &__body {
+        flex: 1;
+        min-width: 0;
+    }
+
+}

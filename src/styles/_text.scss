@@ -1,0 +1,57 @@
+:global{
+
+    .$(prefix)text {
+        &,&__base,&__default {
+            color:$color-text !important;
+        }
+
+        &__weak {
+            color:$color-text-weak !important;
+        }
+
+        &__white {
+            color:$color-text-white !important;
+        }
+        &__link {
+            color:$color-text-link !important;
+        }
+
+        &__info,&__i {
+            color: $theme-bg-info !important;
+        }
+        &__warning, &__w{
+            color: $theme-bg-warning !important;
+        }
+        &__error, &__e {
+            color: $theme-bg-error !important;
+        }
+        &__success, &__s {
+            color: $theme-bg-success !important;
+        }
+
+        @for $i from 12 to 48 {
+            &__size-$i {
+               font-size:$(i)px !important;
+            }
+            &__line-$i {
+               line-height:$(i)px !important;
+            }
+        }
+
+        @for $i from 1 to 4 {
+            &__indent-$i {
+               text-indent:$(i)em !important;
+            }
+        }
+        &__left{
+            text-align: left;
+        }
+        &__right {
+            text-align: right;
+        }
+        &__center {
+            text-align: center;;
+        }
+    }
+
+}

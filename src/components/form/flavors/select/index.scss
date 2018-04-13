@@ -1,0 +1,115 @@
+$base-color: 0 0 0 1px #ccd2e0,
+0 0 5px 0 rgba(44, 123, 255, 0.6);
+.$(prefix)element__container {
+    position: relative;
+    .$(prefix)select {
+        &__wrap {
+            position: relative;
+            border: 1px solid #dadee6;
+            height: 32px;
+            border-radius: 3px;
+            text-align: left;
+            padding-left: 10px;
+            line-height: 32px;
+            color: #2a3541;
+            font-size: 13px;
+            background-color: #fff;
+            &:before,
+            &:after {
+                position: absolute;
+                content: '';
+                display: block;
+                right: .5rem;
+                width: 0;
+                height: 0;
+                border-left: 3px solid transparent;
+                border-right: 3px solid transparent;
+            }
+            &:before {
+                border-bottom: 5px solid #5a6978;
+                top: 8px;
+            }
+            &:after {
+                border-top: 5px solid #5a6978;
+                bottom: 8px;
+            }
+            &:active,
+            &:hover {
+                box-shadow: $base-color;
+            }
+            &:focus {
+                outline: 0;
+                border-color: #1589DE;
+                border-radius: 3px;
+                background-color: #ffffff;
+                box-shadow: 0 0 0 1px #ccd2e0, 0 0 5px 0 rgba(44, 124, 255, 0.6);
+            }
+        }
+        &__control {
+            position: relative;
+            width: 100%;
+            display: block;
+        }
+        &__trigger {
+            display: block;
+            width: 100%;
+        }
+        &__options {
+            width: 100%;
+            max-width: inherit;
+            min-width: inherit;
+            max-height: 160px;
+            overflow-y: auto;
+        }
+        &__disabled {
+            background: #eff0f3;
+            color: #858e99;
+            &:hover {
+                cursor: not-allowed;
+            }
+            /*为了兼容combox 中的input*/
+            & input {
+                cursor: not-allowed;
+                background: #eff0f3;
+            }
+        }
+    }
+}
+
+.$(prefix)element__border {
+    .mcds-dropdown__trigger {
+        box-shadow: 0 0 0 1px #e22e3a;
+    }
+}
+
+.$(prefix)dropdown__checkbox-place {
+    width: 14px;
+    display: inline-block;
+}
+
+.$(prefix)select__horizontal .$(prefix)select__control {
+    display: inline-block;
+    width: 120px;
+    margin-left: 15px;
+}
+
+
+/**
+ * 为了让select 弹窗由上方弹出
+ */
+
+.$(prefix)select {
+    &__options {
+        width: 100%;
+        max-width: inherit;
+        min-width: inherit;
+        max-height: 160px;
+        overflow-y: auto;
+    }
+    &__not-found {
+        padding: 7px 12px;
+        display: flex;
+        cursor: not-allowed;
+        color: #969faa;
+    }
+}

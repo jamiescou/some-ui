@@ -1,0 +1,13 @@
+coverage
+node_modules
+npm-debug.log
+dist
+.DS_Store
+.idea
+lib
+site/layout/main.jsx
+site/layout/sidebar.jsx
+src/components/index.js
+src/base-components/index.js
+example/*
+!example/index.html

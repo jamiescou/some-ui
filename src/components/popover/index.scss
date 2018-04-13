@@ -1,0 +1,277 @@
+
+.$(prefix)popover-trigger{
+    display:inline-block;
+}
+.$(prefix)popover {
+        background:red;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity $duration-quickly linear, visibility $duration-quickly linear;
+        &__show{
+            .$(prefix)popover {
+                visibility: visible !important;
+                opacity: 1 !important;
+            }
+        }
+}
+@define-mixin arrows $direction {
+    &:before{
+        width: 1rem;
+        height: 1rem;
+        position: absolute;
+        transform: rotate(45deg);
+        content: '';
+        background-color: inherit;
+        margin-top: -.5rem;
+        margin-left: -.5rem;
+        @if $direction == top {
+            left: 50%;
+        }
+        @if $direction == left {
+            top: 50%;
+        }
+        @if $direction == right {
+            top: 50%;
+            right: -.5rem;
+        }
+        @if $direction == bottom {
+            left: 50%;
+            bottom: -.5rem;
+        }
+        @if $direction == bottomLeft {
+            left: 1.5rem;
+            top: 100%;
+            margin-top: -.5rem;
+        }
+        @if $direction == bottomRight {
+            left: auto;
+            right: 1.5rem;
+            top: 100%;
+            margin-top: -.5rem;
+            margin-right: -.5rem;
+        }
+        @if $direction == topLeft {
+            left: 1.5rem;
+        }
+        @if $direction == topRight {
+            left: auto;
+            right: 1.5rem;
+            top: 0;
+            margin-right: -.5rem;
+        }
+        @if $direction == rightBottom {
+            top: auto;
+            bottom: 1rem;
+            left:100%;
+            margin-bottom: -1px;
+        }
+        @if $direction == rightTop {
+            top: 1.5rem;
+            right: -.5rem;
+            margin-top: -.5rem;
+        }
+        @if $direction == leftBottom {
+            top: auto;
+            bottom: 1rem;
+            left: 0rem;
+            margin-top: -.5rem;
+        }
+        @if $direction == leftTop {
+            top: 1.5rem;
+            margin-top: -.5rem;
+        }
+
+    }
+    &:after{
+        width: 1rem;
+        height: 1rem;
+        position: absolute;
+        transform: rotate(45deg);
+        
+        z-index: -1;
+        content: '';
+        background-color: inherit;
+       
+        margin-left: -.5rem;
+        @if $direction == top {
+            box-shadow: -1px -1px 0 0 rgba(0,0,0,.16);
+            left: 50%;
+            top: -.5rem;
+        }
+        @if $direction == left {
+            box-shadow: -1px 1px 2px 0 rgba(0, 0, 0, 0.16);
+            top: 50%;
+            margin-top: -.5rem;
+        }
+        @if $direction == right {
+            box-shadow: 1px -1px 2px 0 rgba(0, 0, 0, 0.16);
+            top: 50%;
+            right: -.5rem;
+            margin-top: -.5rem;
+        }
+        @if $direction == bottom {
+            box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.16);
+            left: 50%;
+            bottom: -.5rem;
+        }
+        @if $direction == bottomLeft {
+            left: 1.5rem;
+            top: 100%;
+            margin-top: -.5rem;
+            box-shadow: 2px 2px 4px 0 rgba(0,0,0,.16);
+            z-index: -1;
+        }
+        @if $direction == bottomRight {
+            left: auto;
+            right: 1.5rem;
+            top: 100%;
+            margin-top: -.5rem;
+            margin-right: -.5rem;
+            box-shadow: 2px 2px 4px 0 rgba(0,0,0,.16);
+            z-index: -1;
+        }
+        @if $direction == topLeft {
+            left: 1.5rem;
+            top: -.5rem;
+           // box-shadow: -1px -1px 0 0 rgba(0,0,0,.16);
+            z-index: -1;
+        }
+        @if $direction == topRight {
+            left: auto;
+            right: 1.5rem;
+            top: 1rem;
+            margin-right: -.5rem;
+            z-index: -1;
+        }
+        @if $direction == rightBottom {
+            top: auto;
+            bottom: 1rem;
+            left:100%;
+            box-shadow: 2px -1px 3px 0 rgba(0,0,0,.16);
+            z-index: -1;
+        }
+        @if $direction == rightTop {
+            top: 1.5rem;
+            right: -.5rem;
+            margin-top:-.7em;
+            box-shadow: 1px -1px 2px 0 rgba(0,0,0,.16);
+            z-index: -1;
+        }
+        @if $direction == leftBottom {
+            top: auto;
+            bottom: 1rem;
+            margin-top: -.5rem;
+            left: 0rem;
+            box-shadow: -1px 2px 3px 0 rgba(0,0,0,.16);
+            z-index: -1;
+        }
+        @if $direction == leftTop {
+            top: 1.5rem;
+            box-shadow: -1px 1px 2px 0 rgba(0,0,0,.16);
+            z-index: -1;
+            margin-top: -.5rem;
+        }
+    }
+}
+.$(prefix)popover__arrow {
+    &__top {
+        margin-top:10px;
+        @mixin arrows top ;
+    }
+    &__left {
+        margin-left:10px;
+        @mixin arrows left ;
+    }
+    &__bottom {
+        margin-bottom:10px;
+        @mixin arrows bottom ;
+    }
+    &__right {
+        margin-right:15px;
+        @mixin arrows right ;
+    }
+    &__bottom-left {
+        margin-bottom:10px;
+        @mixin arrows bottomLeft;
+    }
+    &__bottom-right {
+        margin-bottom:10px;
+        @mixin arrows bottomRight;
+    }
+    &__top-left {
+        margin-top:10px;
+        @mixin arrows topLeft;
+    }
+    &__top-right {
+        margin-top:10px;
+        @mixin arrows topRight;
+    }
+    &__right-bottom {
+        margin-right:10px;
+        @mixin arrows rightBottom;
+    }
+    &__right-top {
+        margin-right:10px;
+        @mixin arrows rightTop;
+    }
+    &__left-bottom {
+        margin-right:10px;
+        @mixin arrows leftBottom;
+    }
+    &__left-top {
+        margin-right:10px;
+        @mixin arrows leftTop;
+    }
+
+}
+.$(prefix)popover {
+    position: absolute;
+    display: block;
+    vertical-align: middle;
+    z-index: 7000;
+    min-width: 238px;
+    max-width: 318px;
+    border-radius: .25rem;
+    font-size: .75rem;
+    background: $body-bg;
+    box-shadow: 0 5px 15px 0 rgba(42, 52, 65, 0.3);
+    top: 50%;
+    left: 50%;
+    &__header{
+        padding:20px;
+    }
+    &__body {
+        padding:20px;
+    }
+    &__default {
+
+    }
+    &__info {
+        border: 1px solid transparent;
+        backdrop-filter: blur(5px);
+        background-color: rgba(28, 40, 52, 1)!important;
+        color: #ffffff;
+        box-shadow: 0 5px 15px 0 rgba(42, 52, 65, 0.3);
+    }
+    &__error {
+        border: 1px solid transparent;
+        backdrop-filter: blur(5px);
+        background-color: rgba(198, 37, 40, 1)!important;
+        color: #ffffff;
+        box-shadow: 0 5px 15px 0 rgba(42, 52, 65, 0.2);
+    }
+    &__warning {
+        border: 1px solid transparent;
+        backdrop-filter: blur(5px);
+        background-color: rgba(251, 168, 37, 1)!important;
+        color:#2a3541;
+        box-shadow: 0 5px 15px 0 rgba(42, 52, 65, 0.2);
+    }
+    &__success {
+        border: 1px solid transparent;
+        backdrop-filter: blur(5px);
+        background-color: rgba(0, 158, 71, 1)!important;
+        color: #ffffff;
+        box-shadow: 0 5px 15px 0 rgba(42, 52, 65, 0.2);
+    }
+}

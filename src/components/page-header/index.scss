@@ -1,0 +1,79 @@
+.$(prefix)pageheader{
+        background-color: #f7f7f8;
+        padding: 20px 30px;
+        width: 100%;
+        box-shadow: inset 0 -1px 0 0 rgba(52, 63, 75, 0.08);
+    &__header-left-icon{
+        width: 32px;
+        height: 32px;
+        border-radius: 3px;
+        background-color: #489dff;
+    }
+    &__title{
+        font-size: 20px;
+        color: #2a3541;
+    }
+    &__header-left-text{
+       font-size: 12px;
+       color: #767d85;
+    }
+    &__header-right{
+        margin-bottom: 10px;
+        button{
+            margin-left: 10px;
+            background-color: #fff
+        }
+        .mcds-button__group{
+            margin-left: 10px;
+            & .$(prefix)button {
+                height:32px;
+            }
+        }
+    }
+    &__header-right-icon{
+        padding-left: 9px;
+        padding-right: 9px;
+        font-size: 14px;
+        text-align: center;
+        vertical-align: middle;
+        border: 1px solid #ddd;
+        background-color: #fff;
+    }
+    &__icon-button{
+        background-color: #ffffff;
+        border: 1px solid #ddd;
+        padding: 9px;
+        font-size: 14px;
+        width: 32px;
+        height: 32px;
+        border-radius: 3px;
+        box-shadow: 0 1px 3px 0 rgba(52, 63, 75, 0.12), 0 0 0 1px rgba(52, 63, 75, 0.06);
+    }
+    &__body{
+        display: flex;
+        justify-content: flex-end;
+        button{
+            margin-left: 10px;
+            background-color: #fff
+        }
+        .mcds-button__group{
+            margin-left: 10px;
+        }
+    }
+    &__header-left {
+        flex: 1 1 0%;
+    }
+    &__title{
+        font-size: 20px;
+    }
+    & table, & thead {
+        background: inherit;
+    }
+
+    & thead {
+        & th {
+            height: 16px;
+            line-height: 16px;
+        }
+    }
+}

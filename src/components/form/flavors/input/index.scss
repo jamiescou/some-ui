@@ -1,0 +1,135 @@
+$base-color : 0 0 0 1px #ccd2e0, 0 0 5px 0 rgba(44, 123, 255, 0.6);
+
+.$(prefix)input__container{
+    position: relative;
+}
+
+.$(prefix)label{
+    display: inline-block;
+    height: 16px;
+    color: #767d85;
+    margin-bottom: 5px;
+    font-size: 12px;
+    line-height: 1.33;
+}
+
+.$(prefix)input{
+    background-color: #fff;
+    color: #2a3541;
+    border: 1px solid #ccd2e0;
+    border-radius: 3px;
+    width: 100%;
+    height: 32px;
+    transition: border .1s linear,background-color .1s linear;
+    display: inline-block;
+    padding: 0 12px;
+    line-height: 24px;
+    font-size: 13px;
+    margin: 0;
+    &:focus{
+        outline: 0;
+        border-color: #1589DE;
+        border-radius: 3px;
+        background-color: #ffffff;
+        box-shadow: 0 0 0 1px #ccd2e0, 0 0 5px 0 rgba(44, 124, 255, 0.6);
+    }
+    &:hover{
+        box-shadow: $base-color;
+    }
+}
+
+.$(prefix)input__border {
+    & input {
+        box-shadow: 0 0 0 1px #e22e3a;
+    }
+}
+
+.$(prefix)element__border {
+    box-shadow: 0 0 0 1px #e22e3a;
+}
+
+.$(prefix)disabled{
+    background: #eff0f3;
+    cursor: not-allowed;
+    &:focus{
+        outline: 0;
+        border-color: #eff0f3;
+        background: #eff0f3;
+    }
+}
+.$(prefix)bottom__line{
+    border-bottom: 1px solid #eff0f3;
+    font-size: 13px;
+    .$(prefix)readonly__span{
+        color: #2a3541;
+        line-height: 2;
+    }
+}
+
+.$(prefix)readonly-span__addon{
+    margin-left: 10px;
+    align-self: center;
+}
+
+.$(prefix)input-span__addon{
+    align-self: center;
+    color: #2a3541;
+}
+
+.$(prefix)mg__left{
+    margin-left: 10px;
+}
+
+.$(prefix)fiexed__container{
+    display: flex;
+    font-size: 13px;
+}
+
+.$(prefix)form__horizontal{
+    text-align: right;
+}
+
+.$(prefix)top{
+    margin-top: 10px; 
+}
+
+.$(prefix)form__width{
+    width: 100%;
+}
+
+.$(prefix)inline{
+    .$(prefix)label{
+        float: left;
+        text-align: right;
+        display: inline-block;
+        width: 33%;
+        vertical-align: top;
+        position: relative;
+        top: 10px;
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+    .$(prefix)ckeckbox-group__label,
+    .$(prefix)radio-group__label{
+        float: left;
+        text-align: right;
+        display: inline-block;
+        width: 33%;
+        vertical-align: top;
+        position: relative;
+        top: 3px;
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+    .$(prefix)checkbox__block{
+        width: 44.8%;
+    }
+    div{
+        width: 66%;
+        display: inline-block;
+        text-align: left;
+        .$(prefix)radio__block{
+            margin-top: 0;
+        }
+    }
+}

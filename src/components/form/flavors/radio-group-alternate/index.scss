@@ -1,0 +1,89 @@
+.$(prefix)form-element__label {
+    display: inline-block;
+    color: #767d85;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.$(prefix)radio-button__group {
+    display: inline-flex;
+    border: 1px solid #d8dde6;
+    border-radius: 4px;
+
+    .$(prefix)radio__button:first-child .$(prefix)radio-button__label .$(prefix)radio__faux{
+        border-radius: 3px 0 0 3px;
+    };
+    .$(prefix)radio__button:last-child .$(prefix)radio-button__label .$(prefix)radio__faux{
+        border-radius: 0 3px 3px 0;
+    };
+}
+
+.$(prefix)radio__button {
+    position: relative;
+    display: inline-block;
+    background-clip: padding-box;
+    border-radius: 4px;
+    font-size: 14px;
+    text-decoration: none;
+    color: #0b57d4;
+    transition: color 50ms linear, background-color 50ms linear;
+    .$(prefix)radio__faux {
+        padding-left: 16px;
+        display: block;
+        padding-right: 16px;
+        text-align: center;
+        vertical-align: middle;
+        position: relative;
+        background-color: #fff;
+        transition: border .1s linear, background-color .1s linear;
+        &:hover,
+        &:focus {
+            cursor: pointer;
+            background-color: #f4f6f9;
+        }
+    }
+    .$(prefix)radio-button__label {
+        height: 32px;
+        display: inline-block;
+        line-height: 32px;
+    }
+    .$(prefix)radio-button__label .$(prefix)radio__faux,
+    [type="radio"]:checked + .$(prefix)radio-button__label .$(prefix)radio__faux {
+        background-color: transparent;
+    }
+    + .$(prefix)radio__button {
+        border-left: 1px solid #d8dde6;
+        border-radius: 0;
+        margin: 0;
+    }
+
+    [type="radio"] {
+        border: 0;
+        clip: rect(0 0 0 0);
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        &:checked + .$(prefix)radio__faux,
+        &:checked ~ .$(prefix)radio__faux,
+        &:checked + .$(prefix)radio-button__label {
+            background-color: #2c7cff;
+            color: #fff;
+            &:hover,
+            &:focus {
+                background-color: #2c7cff;
+            }
+        }
+        &:focus + .$(prefix)radio__faux,
+        &:focus ~ .$(prefix)radio__faux,
+        &:focus + .$(prefix)radio-button__label {
+            z-index: 0;
+        }
+        &:disabled + .$(prefix)radio__faux,
+        &:disabled ~ .$(prefix)radio__faux,
+        &:disabled + .$(prefix)radio-button__label {
+            color: #c6cbd0;
+            cursor: default;
+        }
+    }
+}

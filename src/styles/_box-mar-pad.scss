@@ -1,0 +1,57 @@
+/**
+ * 这是一个margin相关的把margin写成样式
+ * mcds-m--12
+ */
+
+:global{
+
+    @define-mixin margin $dir, $size {
+        margin-$(dir): $(size)px !important;
+    }
+
+    @define-mixin padding $dir, $size {
+        padding-$(dir): $(size)px !important;
+    }
+
+
+    @for $i from 0 to 50 {
+        .$(prefix){
+            &m{
+                &__l-$i {
+                    @mixin margin left,$(i);
+                }
+
+                &__r-$i {
+                    @mixin margin right,$(i);
+                }
+
+                &__t-$i {
+                    @mixin margin top,$(i);
+                }
+
+                &__b-$i {
+                    @mixin margin bottom,$(i);
+                }
+            }
+            &p{
+                &__l-$i {
+                    @mixin padding left,$(i);
+                }
+
+                &__r-$i {
+                    @mixin padding right,$(i);
+                }
+
+                &__t-$i {
+                    @mixin padding top,$(i);
+                }
+
+                &__b-$i {
+                    @mixin padding bottom,$(i);
+                }
+            }
+        }
+
+    }
+
+}
