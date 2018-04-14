@@ -1,5 +1,3 @@
-# carbon
-Meiqia Fontend Lighting UI Components
 
 # components 编写方式
 简单想了一下.我们要写的组件是为了尽可能的复用,因此components用<b>无状态函数式组件</b>这种写法较为合试,将大量的无状态组件交给用户去自行组合从而生成应用.
@@ -75,7 +73,7 @@ BEM解决这一问题的思路在于，由于项目开发中，每个组件都�
     .block__element{}
     .block--modifier{}
     
-### Meiqia UI 规范
+###  UI 规范
 
 参考 BEM
 举例子，如果你想要造一个房子，那么整个整个房子的 class就是 .house
@@ -85,5 +83,5 @@ BEM解决这一问题的思路在于，由于项目开发中，每个组件都�
 
 比如我们想要一块文字显示的小一些，那么他的 class 可以为 .slds-text-body--small，大一些的可以是 .slds-text-heading--large
 
-为了让我们的组件可以跟其他的组件能够兼容使用，我们需要给自己的组件加上一个前缀的命名空间，比如暂定为 .mcds-，（Meiqia CRM Design System）,比如我们定义一个按钮样式，这时应该是 .mcds-button 而不是 .button
+为了让我们的组件可以跟其他的组件能够兼容使用，我们需要给自己的组件加上一个前缀的命名空间，比如暂定为 .xxxx-,比如我们定义一个按钮样式，这时应该是 .xxxx-button 而不是 .button
 
